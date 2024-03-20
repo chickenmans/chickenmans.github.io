@@ -27,7 +27,7 @@
 
 								<script>
 									var i = 0;
-									var txt = '你好啊~快看看下面有没有想看的'; /* 这里是你想要显示的文本 */
+									var txt = '你好啊~快看看下面有没有想看的'; /* 文本 */
 									var speed = 100; /* 文字间隔时间（毫秒） */
 									
 									function typeWriter() {
@@ -59,7 +59,7 @@
 						<!-- Intro -->
 						<article id="ets">
 							<h2 class="major">E听说答案工具</h2>
-							<span class="image main"><img data-src="images/pic01.webp" class="lazy" alt="" /></span>
+							<span class="image main"><img src="images/pic01.webp" id="pic01" alt="" /></span>
 							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14！！！</b></p>
 							<p>下载题目后即可获取答案 不再为同学不给你答案而担心了 你也可以用这个工具来获取到比E听说本身提供的更多的答案 遥遥领先🥰</p>
 							<p>Andoid系统下载安装APK的 Windows下载Zip的解压运行 欢迎大佬改进Andoid版本 <b>由于作者个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
@@ -99,7 +99,7 @@
 						<!-- Work -->
 							<article id="net">
 								<h2 class="major">自动认证学校网络</h2>
-								<span class="image main"><img data-src="images/pic02.webp" class="lazy" alt="" /></span>
+								<span class="image main"><img src="images/pic02.webp" id="pic02" alt="" /></span>
 								<p>大家都知道啊 我们连接学校网络的时候往往会弹出一个窗口提示你去认证 但很显然 我们都没有这个认证的账号和密码 不过 总会有方法的!</p>
 								<p>以下是我无聊时做的一个小工具 用于直接登录 Windwos端的使用前提是你要有一个账号名称噢 <b>其实这个名称就是班主任们的名字</b> Android端直接连接即可 下载链接就在下方~ 仅适用于鸽子中学的认证 其他学校无效噢 手机端现在支持在未连接过学校网络的情况下自动连接并认证~
 								</p>
@@ -110,7 +110,7 @@
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">关于我</h2>
-								<span class="image main"><img class="lazy" data-src="images/pic03.webp" alt="" /></span>
+								<span class="image main"><img src="images/pic03.webp" id="pic03" alt="" /></span>
 								<p>好吧，其实这里没什么好看的~</p>
 								<p>近期只概率性更新E听说答案</p>
 								<p>2024.3.17</p>
@@ -148,27 +148,32 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-				  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-				
-				  if ("IntersectionObserver" in window) {
-					let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-					  entries.forEach(function(entry) {
-						if (entry.isIntersecting) {
-						  let lazyImage = entry.target;
-						  lazyImage.src = lazyImage.dataset.src;
-						  lazyImage.classList.remove("lazy");
-						  lazyImageObserver.unobserve(lazyImage);
-						}
-					  });
-					});
-				
-					lazyImages.forEach(function(lazyImage) {
-					  lazyImageObserver.observe(lazyImage);
-					});
-				  }
-				});
-				</script>
+				window.onload = function() {
+				  // 页面加载完成后，开始加载图片
+				  var img3 = new Image();
+				  img3.src = 'images/pic03.webp';  // 图片的真实路径
+				  img3.onload = function() {
+					// 图片加载完成后，将其添加到页面中
+					document.getElementById('pic03').appendChild(img3);
+
+				  };
+
+				  var img1 = new Image();
+				  img1.src = 'images/pic01.webp';
+				  img1.onload = function() {
+					document.getElementById('pic01').appendChild(img1);
+
+				  };
+
+				  var img2 = new Image();
+				  img2.src = 'images/pic02.webp';
+				  img2.onload = function() {
+					document.getElementById('pic02').appendChild(img2);
+
+				  };
+				};
+			</script>
+
 
 	</body>
 </html>
