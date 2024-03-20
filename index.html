@@ -22,8 +22,24 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>ycc</h1>
-								<p>你好啊~快看看下面有没有想看的</p>
+								<h1>yc</h1>
+								<p id="typein"></p>
+
+								<script>
+									var i = 0;
+									var txt = '你好啊~快看看下面有没有想看的'; /* 这里是你想要显示的文本 */
+									var speed = 100; /* 文字间隔时间（毫秒） */
+									
+									function typeWriter() {
+									  if (i < txt.length) {
+										document.getElementById("typein").innerHTML += txt.charAt(i);
+										i++;
+										setTimeout(typeWriter, speed);
+									  }
+									}
+									typeWriter();
+									</script>
+
 							</div>
 						</div>
 						<nav>
@@ -43,15 +59,14 @@
 						<!-- Intro -->
 						<article id="ets">
 							<h2 class="major">E听说答案工具</h2>
-							<span class="image main"><img src="images/pic01.webp" alt="" /></span>
-							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 若仍需使用 请用Shizuku授权 此授权需要电脑 所以不如直接使用电脑版本！！！若想继续正常使用请保持版本低于Android 14</b></p>
+							<span class="image main"><img data-src="images/pic01.webp" class="lazy" alt="" /></span>
+							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14！！！</b></p>
 							<p>下载题目后即可获取答案 不再为同学不给你答案而担心了 你也可以用这个工具来获取到比E听说本身提供的更多的答案 遥遥领先🥰</p>
 							<p>Andoid系统下载安装APK的 Windows下载Zip的解压运行 欢迎大佬改进Andoid版本 <b>由于作者个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
 							<p><a href="https://www.123pan.com/s/gsA8Vv-APX23.html">最后版本下载请点我：</a> </p>
 							<p><a href="https://github.com/chickenmans/AT-ETS_PC">开放源代码</a> </p>
 							<p>2024.3.17</p>
-						
-							<!-- 新增的部分 -->
+							<!-- 答案显示 -->
 							<button id="toggleButton">显示近期答案</button>
 							<div id="answerText" style="display: none;">更新日期:3.17 <br>
 								角色扮演: <br>
@@ -84,7 +99,7 @@
 						<!-- Work -->
 							<article id="net">
 								<h2 class="major">自动认证学校网络</h2>
-								<span class="image main"><img src="images/pic02.webp" alt="" /></span>
+								<span class="image main"><img data-src="images/pic02.webp" class="lazy" alt="" /></span>
 								<p>大家都知道啊 我们连接学校网络的时候往往会弹出一个窗口提示你去认证 但很显然 我们都没有这个认证的账号和密码 不过 总会有方法的!</p>
 								<p>以下是我无聊时做的一个小工具 用于直接登录 Windwos端的使用前提是你要有一个账号名称噢 <b>其实这个名称就是班主任们的名字</b> Android端直接连接即可 下载链接就在下方~ 仅适用于鸽子中学的认证 其他学校无效噢 手机端现在支持在未连接过学校网络的情况下自动连接并认证~
 								</p>
@@ -95,7 +110,7 @@
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">关于我</h2>
-								<span class="image main"><img src="images/pic03.webp" alt="" /></span>
+								<span class="image main"><img class="lazy" data-src="images/pic03.webp" alt="" /></span>
 								<p>好吧，其实这里没什么好看的~</p>
 								<p>近期只概率性更新E听说答案</p>
 								<p>2024.3.17</p>
@@ -112,248 +127,6 @@
 									<li><a href="https://twitter.com/yc2166" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="https://github.com/chickenmans/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
 							</article>
 
 					</div>
@@ -374,6 +147,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+				  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+				
+				  if ("IntersectionObserver" in window) {
+					let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+					  entries.forEach(function(entry) {
+						if (entry.isIntersecting) {
+						  let lazyImage = entry.target;
+						  lazyImage.src = lazyImage.dataset.src;
+						  lazyImage.classList.remove("lazy");
+						  lazyImageObserver.unobserve(lazyImage);
+						}
+					  });
+					});
+				
+					lazyImages.forEach(function(lazyImage) {
+					  lazyImageObserver.observe(lazyImage);
+					});
+				  }
+				});
+				</script>
 
 	</body>
 </html>
