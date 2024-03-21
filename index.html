@@ -26,19 +26,20 @@
 								<p id="typein"></p>
 
 								<script>
-									var i = 0;
+									var ii = 0;
 									var txt = '你好啊~快看看下面有没有想看的'; /* 文本 */
 									var speed = 100; /* 文字间隔时间（毫秒） */
-									
+						
 									function typeWriter() {
-									  if (i < txt.length) {
-										document.getElementById("typein").innerHTML += txt.charAt(i);
-										i++;
-										setTimeout(typeWriter, speed);
-									  }
+										if (ii < txt.length) {
+											document.getElementById("typein").innerHTML += txt.charAt(ii);
+											ii++;
+											setTimeout(typeWriter, speed);
+										}
 									}
+
 									typeWriter();
-									</script>
+								</script>
 
 							</div>
 						</div>
@@ -65,32 +66,51 @@
 								<button id="toggleButton">显示近期答案</button>
 							</div>
 							<p></p>
-							<div id="answerText" style="display: none;">更新日期:3.17 <br>
-								角色扮演: <br>
-								问题 1 : 1. Do you have any other part-time job? <br>
-								问题 2 : 1. Do you think you make enough pocket money? <br>
-								问题 3 : 1. How do you usually spend your pocket money? <br>
-								问题 4 : 1. He is fifteen. <br>
-								问题 5 : 1. He does housework for his uncle. <br>
-								问题 6 : 1. He helps take care of his neighbours’ baby every Friday evening. <br>
-								问题 7 : 1. Most of them get six to ten dollars a week from their parents. <br>
-								问题 8 : 1. He doesn’t want to depend on his parents totally. <br>
-								故事复述: 1. <br>
-								After Julia discovered that a company wanted to cut down part of a forest in California, she travelled there and climbed up the tree. She lived in the tree to stop the company from cutting down the forest. Also she told her family and news reporters about this event. With the help of environmental organizations and other people, she was successful. The company agreed to stop cutting the forest. Finally, Julia Hill climbed down and walked on the ground again.
-							</div>
+							<div id="answerText" style="display: none;"></div>
+							<p></p>
 													
 							<script>
-								document.getElementById('toggleButton').addEventListener('click', function() {
+								var text = `
+								更新日期:3.17
+								角色扮演:
+								问题 1 : 1. Do you have any other part-time job?
+								问题 2 : 1. Do you think you make enough pocket money?
+								问题 3 : 1. How do you usually spend your pocket money?
+								问题 4 : 1. He is fifteen.
+								问题 5 : 1. He does housework for his uncle.
+								问题 6 : 1. He helps take care of his neighbours’ baby every Friday evening.
+								问题 7 : 1. Most of them get six to ten dollars a week from their parents.
+								问题 8 : 1. He doesn’t want to depend on his parents totally.
+								故事复述: 1.
+								After Julia discovered that a company wanted to cut down part of a forest in California, she travelled there and climbed up the tree. She lived in the tree to stop the company from cutting down the forest. Also she told her family and news reporters about this event. With the help of environmental organizations and other people, she was successful. The company agreed to stop cutting the forest. Finally, Julia Hill climbed down and walked on the ground again.`;
+								var i = 0;
 								var answerText = document.getElementById('answerText');
-								if (answerText.style.display === 'none') {
-									answerText.style.display = 'block';
-									this.textContent = '隐藏近期答案';
+							
+								document.getElementById('toggleButton').addEventListener('click', function() {
+									if (answerText.style.display === 'none') {
+										answerText.style.display = 'block';
+										this.textContent = '隐藏近期答案';
+										var timer = setInterval(function() {
+											if (i < text.length) {
+												if (text.charAt(i) === '\n') {
+													answerText.innerHTML += '<br>';
+												} else {
+													answerText.innerHTML += text.charAt(i);
+												}
+												i++;
+											} else {
+												clearInterval(timer);
+											}
+										}, 20); // 每10毫秒添加一个字符
 									} else {
 										answerText.style.display = 'none';
 										this.textContent = '显示近期答案';
+										answerText.innerHTML = ''; // 清空文本
+										i = 0; // 重置索引
 									}
 								});
 							</script>
+
 							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14 或者来此处看看有没有更新答案吧~</b></p>
 							<p>下载题目后即可获取答案 不再为同学不给你答案而担心了 你也可以用这个工具来获取到比E听说本身提供的更多的答案 遥遥领先🥰</p>
 							<p>Andoid系统下载APK文件安装 Windows下载Zip文件解压运行 欢迎改进Andoid版本 <b>由于个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
