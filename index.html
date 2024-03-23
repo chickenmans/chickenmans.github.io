@@ -32,34 +32,8 @@
 						<div class="content">
 							<div class="inner">
 								<h1>yc</h1>
-								<p id="typein"></p>
-								<p id="author"></p>
-
-								<script>
-								var ii = 0;
-								var txt = ''; /* 文本 */
-								var author = ''; /* 作者 */
-								var speed = 100; /* 文字间隔时间（毫秒） */
-
-								fetch('https://v1.hitokoto.cn')
-								.then(response => response.json())
-								.then(data => {
-									txt = data.hitokoto;
-									author = '—— ' + data.from;
-									typeWriter();
-								})
-								.catch(console.error);
-
-								function typeWriter() {
-								if (ii < txt.length) {
-									document.getElementById("typein").innerHTML += txt.charAt(ii);
-									ii++;
-									setTimeout(typeWriter, speed);
-								} else {
-									document.getElementById("author").innerText = author;
-								}
-								}
-								</script>
+									<p id="typein"></p>
+									<p id="author"></p>
 
 							</div>
 						</div>
@@ -149,7 +123,7 @@
 											} else {
 												clearInterval(timer);
 											}
-										}, 15); // 每()毫秒添加一个字符
+										}, 10); // 每()毫秒添加一个字符
 									} else {
 										answerText.style.display = 'none';
 										this.textContent = '显示近期答案';
@@ -205,9 +179,8 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">嘿嘿嘿 欢迎分享给你的朋友们</p>
+						<p class="copyright">嘿嘿嘿 欢迎分享给你的朋友们 随机文案来源于一言</p>
 					</footer>
-
 			</div>
 
 		<!-- BG -->
@@ -219,6 +192,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var ii = 0;
+				var txt = ''; /* 文本 */
+				var author = ''; /* 作者 */
+				var from = ''; /* 作品集 */
+				var speed = 100; /* 文字间隔时间（毫秒） */
+				
+				fetch('https://v1.hitokoto.cn')
+				.then(response => response.json())
+				.then(data => {
+					txt = '『' + data.hitokoto + '』';
+					author = '—— ' + data.creator;
+					from = '「' + data.from + '」';
+					if (author === '—— 原创' || author === '—— 自己') {
+						author = '—— 互联网';
+					}
+					typeWriter();
+				})
+				.catch(console.error);
+				
+				function typeWriter() {
+					if (ii < txt.length) {
+						document.getElementById("typein").innerHTML += txt.charAt(ii);
+						ii++;
+						setTimeout(typeWriter, speed);
+					} else {
+						document.getElementById("author").innerText = author + from;
+					}
+				}
+			</script>
 			<script>
 				window.onload = function() {
 				  // 页面加载完成后，开始加载图片
@@ -245,7 +248,5 @@
 				  };
 				};
 			</script>
-
-
 	</body>
 </html>

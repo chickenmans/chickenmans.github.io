@@ -1261,6 +1261,9 @@ input, select, textarea {
 		max-width: 100%;
 		text-align: center;
 	}
+		#author {
+		text-align: right;
+		}
 
 		#header > * {
 			-moz-transition: opacity 0.325s ease-in-out;
