@@ -33,21 +33,32 @@
 							<div class="inner">
 								<h1>yc</h1>
 								<p id="typein"></p>
+								<p id="author"></p>
 
 								<script>
-									var ii = 0;
-									var txt = '你好啊~快看看下面有没有想看的'; /* 文本 */
-									var speed = 100; /* 文字间隔时间（毫秒） */
-						
-									function typeWriter() {
-										if (ii < txt.length) {
-											document.getElementById("typein").innerHTML += txt.charAt(ii);
-											ii++;
-											setTimeout(typeWriter, speed);
-										}
-									}
+								var ii = 0;
+								var txt = ''; /* 文本 */
+								var author = ''; /* 作者 */
+								var speed = 100; /* 文字间隔时间（毫秒） */
 
+								fetch('https://v1.hitokoto.cn')
+								.then(response => response.json())
+								.then(data => {
+									txt = data.hitokoto;
+									author = '—— ' + data.from;
 									typeWriter();
+								})
+								.catch(console.error);
+
+								function typeWriter() {
+								if (ii < txt.length) {
+									document.getElementById("typein").innerHTML += txt.charAt(ii);
+									ii++;
+									setTimeout(typeWriter, speed);
+								} else {
+									document.getElementById("author").innerText = author;
+								}
+								}
 								</script>
 
 							</div>
