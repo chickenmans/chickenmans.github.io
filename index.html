@@ -259,11 +259,15 @@
 				.then(response => response.json())
 				.then(data => {
 					txt = '『' + data.hitokoto + '』';
-					author = '—— ' + data.creator;
+					author = '—— ' + data.from_who;
 					from = '「' + data.from + '」';
+					if (author ==='—— null') {
+						author = '——' + data.creator
+					}
 					if (author === '—— 原创' || author === '—— 自己') {
 						author = '—— 互联网';
 					}
+
 					typeWriter();
 				})
 				.catch(console.error);
