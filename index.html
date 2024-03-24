@@ -7,24 +7,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+	
+		gtag('config', 'G-YSHE571DS4');
+		</script>
 	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-YSHE571DS4');
-	</script>
-
 
 	<body class="is-preload">
 
-		<!-- Wrapper -->
+		
 			<div id="wrapper">
 
-				<!-- Header -->
+				
 					<header id="header">
 						<div class="logo" style="position: relative;">
 							<img src="images/logo.jpg" style="width: 5.8rem; height: 5.8rem; border-radius: 50%; object-fit: cover; position: absolute; top: -5px; left: -5px;">
@@ -39,8 +37,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#ets">E听说答案工具</a></li>
-								<li><a href="#net">自动认证学校网络</a></li>
+								<li><a href="#all">所有内容</a></li>
+								<li><a href="#etsanswer">本期E听说答案</a></li>
 								<li><a href="#about">关于我</a></li>
 								<li><a href="#contact">联系作者~</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
@@ -48,70 +46,83 @@
 						</nav>
 					</header>
 
-				<!-- Main -->
+				
 					<div id="main">
 
-						<!-- Intro -->
+						
 						<article id="ets">
 							<h2 class="major">E听说答案工具</h2>
 							<span class="image main"><img src="images/pic01.webp" id="pic01" alt="" /></span>
+							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14</b></p>
+							<p>下载题目后即可获取答案 不再为同学不给你答案而担心了 你也可以用这个工具来获取到比E听说本身提供的更多的答案 遥遥领先🥰</p>
+							<p>Andoid系统下载APK文件安装 Windows下载Zip文件解压运行 欢迎改进Andoid版本 <b>由于个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
+							<p><a href="https://www.123pan.com/s/gsA8Vv-gtX23.html">最新应用下载请点我：</a> </p>
+							<p><a href="https://github.com/chickenmans/AT-ETS_PC">开放源代码</a> </p>
+							<p>2024.3.22</p>
+
+						</article>
+
+						<article id="etsanswer">
+							<h2 class="major">本期E听说答案</h2>
 							<!-- 答案显示 -->
-							<div style="text-align: center;">  <!-- 添加了style="text-align: center;" -->
-								<button id="toggleButton">显示近期答案</button>
-							</div>
+
 							<p></p>
 							<div id="answerText" style="display: none;"></div>
 							<p></p>
 													
 							<script>
 								var text = `
-								更新日期:3.22								角色扮演:
+									更新日期:3.22								角色扮演:
 
-问题 1 :
+									问题 1 :
 
-1. Why have cultural relics begun to be a hot topic in China today?
+									1. Why have cultural relics begun to be a hot topic in China today?
 
-问题 2 :
+									问题 2 :
 
-1. What about China are foreigners interested in?
+									1. What about China are foreigners interested in?
 
-问题 3 :
+									问题 3 :
 
-1. Have Chinese studies abroad increased a great deal?
+									1. Have Chinese studies abroad increased a great deal?
 
-问题 4 :
+									问题 4 :
 
-1. Many traditional buildings.
+									1. Many traditional buildings.
 
-问题 5 :
+									问题 5 :
 
-1. To educate people.
+									1. To educate people.
 
-问题 6 :
+									问题 6 :
 
-1. Cultural relics.
+									1. Cultural relics.
 
-问题 7 :
+									问题 7 :
 
-1. Chinese relics.
+									1. Chinese relics.
 
-问题 8 :
+									问题 8 :
 
-1. A growing economic and international player.
+									1. A growing economic and international player.
 
 
-故事复述:
+									故事复述:
 
-1. Sam went to Paris on business. During his stay there, he went sightseeing in the city. He went to the Eiffel Tower, and ate there. The view was beautiful. Every building was bright. In the Louvre, he saw a Da Vinci painting and the statue of the Goddess Venus. He found it impossible to see all the works there. Then he visited the Triumphal Arch, and walked along the Seine River. He had a good time and took many photos.
+									1. Sam went to Paris on business. During his stay there, he went sightseeing in the city. He went to the Eiffel Tower, and ate there. The view was beautiful. Every building was bright. In the Louvre, he saw a Da Vinci painting and the statue of the Goddess Venus. He found it impossible to see all the works there. Then he visited the Triumphal Arch, and walked along the Seine River. He had a good time and took many photos.
 
-`;
+									`;
 								var i = 0;
 								var answerText = document.getElementById('answerText');
-							
-								document.getElementById('toggleButton').addEventListener('click', function() {
-									if (answerText.style.display === 'none') {
+								var a = document.querySelector('a[href="#etsanswer"]');
+								// 添加一个标志，用来记录用户是否已经点击过<a href="#etsanswer">
+								var clicked = false;
+
+								// 添加click事件监听器
+								a.addEventListener('click', function(event) {
+									if (!clicked) {
+										// 如果用户第一次点击<a href="#etsanswer">，则开始模拟输入的效果输出答案
 										answerText.style.display = 'block';
-										this.textContent = '隐藏近期答案';
 										var timer = setInterval(function() {
 											if (i < text.length) {
 												if (text.charAt(i) === '\n') {
@@ -122,24 +133,17 @@
 												i++;
 											} else {
 												clearInterval(timer);
+												// 用户已经点击过<a href="#etsanswer">，所以将标志设置为true
+												clicked = true;
 											}
-										}, 10); // 每()毫秒添加一个字符
+										}, 10); // 每()毫秒更新
 									} else {
-										answerText.style.display = 'none';
-										this.textContent = '显示近期答案';
-										answerText.innerHTML = ''; // 清空文本
-										i = 0; // 重置索引
+										// 如果用户已经点击过<a href="#etsanswer">，则直接显示答案
+										answerText.style.display = 'block';
 									}
 								});
+								
 							</script>
-
-							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14</b></p>
-							<p>下载题目后即可获取答案 不再为同学不给你答案而担心了 你也可以用这个工具来获取到比E听说本身提供的更多的答案 遥遥领先🥰</p>
-							<p>Andoid系统下载APK文件安装 Windows下载Zip文件解压运行 欢迎改进Andoid版本 <b>由于个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
-							<p><a href="https://www.123pan.com/s/gsA8Vv-gtX23.html">最新应用下载请点我：</a> </p>
-							<p><a href="https://github.com/chickenmans/AT-ETS_PC">开放源代码</a> </p>
-							<p>2024.3.22</p>
-
 						</article>
 
 						<!-- Work -->
@@ -154,8 +158,12 @@
 							<div style="text-align:center;">
 								<button id="executeButton">尝试直接认证</button>
 							</div>
+							<div>
+
+							</div>
+							
 						</article>
-						
+
 						<script>
 						document.getElementById('executeButton').addEventListener('click', function() {
 							var script = document.createElement('script');
@@ -167,12 +175,38 @@
 						});
 						</script>
 
+						<script>
+							document.getElementById('executeButton').addEventListener('click', function() {
+							var articles = document.getElementsByTagName('article');
+							var titles = [];
+							for (var i = 0; i < articles.length; i++) {
+								// 检查<article>元素的id属性
+								var id = articles[i].id;
+								// 如果id属性是"about"，"contact"或"ets"，则跳过这个<article>元素
+								if (id === 'about' || id === 'contact' || id === 'ets') {
+									continue;
+								}
+								var title = articles[i].getElementsByTagName('h2')[0].innerText;
+								titles.push(title);
+							}
+							var div = document.createElement('div');
+							for (var i = 0; i < titles.length; i++) {
+								var a = document.createElement('a');
+								a.innerText = titles[i];
+								a.href = '#' + articles[i].id;
+								div.appendChild(a);
+								div.appendChild(document.createElement('br'));
+							}
+							document.body.appendChild(div);
+							});
+						</script>
+
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">关于我</h2>
 								<span class="image main"><img src="images/pic03.webp" id="pic03" alt="" /></span>
 								<p>好吧，其实这里没什么好看的~</p>
-								<p>不定期更新更新E听说答案</p>
+								<p>不定期更新点无聊的内容和E听说答案🥰</p>
 								<p>2024.3.17</p>
 							</article>
 
@@ -188,6 +222,14 @@
 									<li><a href="https://github.com/chickenmans/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
+
+							<article id="all">
+								<h2 class="major">往期所有内容</h2>
+								<div class="inner">
+								</div>
+							</article>
+
+
 
 					</div>
 
@@ -261,6 +303,34 @@
 
 				  };
 				};
+			</script>
+			<script>
+				var a = document.querySelector('a[href="#all"]');
+				// 添加click事件监听器
+				a.addEventListener('click', function(event) {
+					var articles = document.getElementsByTagName('article');
+					var innerDiv = document.querySelector('#all .inner');
+					innerDiv.innerHTML = '';
+    				var index = 1;
+					for (var i = 0; i < articles.length; i++) {
+						var id = articles[i].id;
+						if (id === 'about' || id === 'contact' || id === 'etsanswer'| id === 'all') {
+							continue;
+						}
+						var title = articles[i].getElementsByTagName('h2')[0].innerText;
+						var titleLink = document.createElement('a');
+						titleLink.innerText = index + '. ' + title;
+						titleLink.href = '#' + id;
+						innerDiv.appendChild(titleLink);
+						// 连换两行，我觉得这样好看~
+						innerDiv.appendChild(document.createElement('br'));
+						innerDiv.appendChild(document.createElement('br'));
+						index++;
+					}
+				});
+
+
+
 			</script>
 	</body>
 </html>
