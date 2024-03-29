@@ -19,7 +19,6 @@
 
 	<body class="is-preload">
 
-		
 			<div id="wrapper">
 
 				
@@ -73,56 +72,54 @@
 													
 							<script>
 								var text = `
-									更新日期:3.22								角色扮演:
+									更新日期:3.29								
+									角色扮演:
 
-									问题 1 :
+									问题 1:
 
-									1. Why have cultural relics begun to be a hot topic in China today?
+									1. Does T’ai chi have a long history? 
 
-									问题 2 :
+									问题 2:
 
-									1. What about China are foreigners interested in?
+									1. The name of T’ai chi carries a special meaning, doesn’t it? 
 
-									问题 3 :
+									问题 3:
 
-									1. Have Chinese studies abroad increased a great deal?
+									1. In which countries do people like playing T’ai chi at present? 
 
-									问题 4 :
+									问题 4:
 
-									1. Many traditional buildings.
+									1. No, it isn’t.
 
-									问题 5 :
+									问题 5:
 
-									1. To educate people.
+									1. It can be used to cure illness and for self-protection.
 
-									问题 6 :
+									问题 6:
 
-									1. Cultural relics.
+									1. Taoism. 
 
-									问题 7 :
+									问题 7:
 
-									1. Chinese relics.
+									1. A world of Yin and Yang.
 
-									问题 8 :
+									问题 8:
 
-									1. A growing economic and international player.
-
+									1. More and more people around the world.
 
 									故事复述:
 
-									1. Sam went to Paris on business. During his stay there, he went sightseeing in the city. He went to the Eiffel Tower, and ate there. The view was beautiful. Every building was bright. In the Louvre, he saw a Da Vinci painting and the statue of the Goddess Venus. He found it impossible to see all the works there. Then he visited the Triumphal Arch, and walked along the Seine River. He had a good time and took many photos.
-
+									1. On July 22, 2012, Liu Lan went to London. She is a girl from Harbin and she was one of many Chinese volunteers working for the past 2012 Olympic Games in London. As a volunteer for the Olympic Games, she felt very proud because working as a volunteer influenced her deeply. Actually, when she was a junior student at Beijing Foreign Studies University, she once worked as a guide for the foreign athletes in 2008 Beijing Olympic Games. After she graduated from the Newcastle University in England, she is now working as an interpreter at the London Court. 
 									`;
 								var i = 0;
 								var answerText = document.getElementById('answerText');
 								var a = document.querySelector('a[href="#etsanswer"]');
-								// 添加一个标志，用来记录用户是否已经点击过<a href="#etsanswer">
 								var clicked = false;
 
-								// 添加click事件监听器
+								// 监听
 								a.addEventListener('click', function(event) {
 									if (!clicked) {
-										// 如果用户第一次点击<a href="#etsanswer">，则开始模拟输入的效果输出答案
+										
 										answerText.style.display = 'block';
 										var timer = setInterval(function() {
 											if (i < text.length) {
@@ -134,12 +131,11 @@
 												i++;
 											} else {
 												clearInterval(timer);
-												// 用户已经点击过<a href="#etsanswer">，所以将标志设置为true
+												
 												clicked = true;
 											}
 										}, 10); // 每()毫秒更新
 									} else {
-										// 如果用户已经点击过<a href="#etsanswer">，则直接显示答案
 										answerText.style.display = 'block';
 									}
 								});
