@@ -36,8 +36,8 @@
 			
 			var modal = document.createElement('div');
             modal.style.position = 'fixed';
-            modal.style.top = '20px';  // 距离顶部20px
-            modal.style.right = '20px';  // 距离右边20px
+            modal.style.top = '20px';  
+            modal.style.right = '20px';  
             modal.style.background = 'rgba(0,0,0,0.5)';
             modal.style.color = 'white';
             modal.style.fontSize = '15px';
@@ -61,7 +61,7 @@
                     document.body.removeChild(modal);
 					// 已经显示过
                     localStorage.setItem('shownModal', 'true');
-                }, 800);  // 800毫秒后移除
+                }, 800);  
             }, 5000);  // 5秒后开始消失
         }, 0);  
     };
@@ -108,10 +108,13 @@
 							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14</b></p>
 							<p>下载题目后即可获取答案 不用再为同学不给答案而担心了 你也可以用它获取到比E听说本身提供的更多的答案 遥遥领先🤗</p>
 							<p>Andoid系统下载APK文件安装 Windows下载Zip文件解压运行 欢迎改进Andoid版本 <b>由于个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
-							<p><a href="https://www.123pan.com/s/gsA8Vv-4LX23.html">最新应用下载请点我：</a> </p>
-							<p><a href="https://github.com/ycccccccy/AT-ETS_PC">Windows端开放源代码</a> </p>
+							下载:
+							<br>
+							<a href="https://d.kstore.space/download/8128/main.zip">FK-ETS-Windows-x64</a>
+							<p><a href="https://d.kstore.space/download/8128/at-ets.apk">FK-ETS-Android-arm64</a></p>
+							<a href="https://github.com/ycccccccy/AT-ETS_PC">Windows端开放源代码</a>
 							<p><a href="https://github.com/ycccccccy/AT-ETS_Android">Android端开放源代码</a> </p>
-							<p>2024.3.22</p>
+							<p>2024.3.30</p>
 
 						</article>
 
@@ -203,29 +206,15 @@
 							<span class="image main"><img src="images/pic02.webp" id="pic02" alt="" /></span>
 							<p>大家都知道啊 我们连接学校网络的时候往往会弹出一个窗口提示你去认证 但很显然 我们都没有这个认证的账号和密码 不过 怎么可能用不了呢😆</p>
 							<p>以下是我无聊时做的一个小工具 用于自动认证 Android设备使用时任何弹出的授权请求务必授权 否则会导致出错!</p>
-							<p>包括iOS在内的所有系统都可直接在本页面下方使用“直接认证” 此功能不稳定 请勿依赖浏览器端的直接认证</p>
 							<p>3.27更新内容：删除了经常抽风的自动联网 修改了判定逻辑 新增登出认证以及显示在线时间 自动保持在线的功能</p>
-							<p><a href="https://www.123pan.com/s/gsA8Vv-NzX23.html">最新应用下载请点我：</a> </p>
+							下载:
+							<br>
+							<a href="https://d.kstore.space/download/8128/GZnet-Windows-x64.zip">GZnet-Windows-x64</a>
+							<p><a href="https://d.kstore.space/download/8128/鸽子家的网络.apk">GZnet-Android-arm64</a></p>
 							<p>2024.3.27</p>
-							<div style="text-align:center;">
-								<button id="executeButton">尝试直接认证</button>
-							</div>
-							<div>
-
-							</div>
 							
 						</article>
 
-						<script>
-						document.getElementById('executeButton').addEventListener('click', function() {
-							var script = document.createElement('script');
-							script.onload = function() {
-								alert('请自行确认效果，已提交执行🤔');
-							};
-							script.src = 'assets/js/send.js';
-							document.head.appendChild(script);
-						});
-						</script>
 
 						<script>
 							document.getElementById('executeButton').addEventListener('click', function() {
