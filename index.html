@@ -29,6 +29,11 @@
 
     testImage.onerror = function() {
         setTimeout(function() {
+			// 检查是否已经显示过弹窗
+			if (localStorage.getItem('shownModal')) {
+            return;
+        	}
+			
 			var modal = document.createElement('div');
             modal.style.position = 'fixed';
             modal.style.top = '20px';  // 距离顶部20px
@@ -38,7 +43,7 @@
             modal.style.fontSize = '15px';
             modal.style.zIndex = '1000';
             modal.style.padding = '10px';
-            modal.innerHTML = '<p style="text-align: center;">我们检测到你启用了广告拦截</p><p style="text-align: center;">暂时为此网站关掉它吧!</p>';
+            modal.innerHTML = '我们检测到你启用了广告拦截 暂时为此网站关掉它吧';
             modal.style.opacity = '0';
             modal.style.transition = 'opacity 0.8s';
             document.body.appendChild(modal);
@@ -54,6 +59,8 @@
                 
                 setTimeout(function() {
                     document.body.removeChild(modal);
+					// 已经显示过
+                    localStorage.setItem('shownModal', 'true');
                 }, 800);  // 800毫秒后移除
             }, 5000);  // 5秒后开始消失
         }, 0);  
