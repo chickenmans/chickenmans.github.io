@@ -22,7 +22,6 @@
 		crossorigin="anonymous">
 		</script>
 
-
 <script>
     //高端的检测往往采用最朴素的验证方式...
     var testImage = new Image();
@@ -32,18 +31,13 @@
         setTimeout(function() {
 			var modal = document.createElement('div');
             modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.right = '0';
-            modal.style.bottom = '0';
-            modal.style.left = '0';
+            modal.style.top = '20px';  // 距离顶部20px
+            modal.style.right = '20px';  // 距离右边20px
             modal.style.background = 'rgba(0,0,0,0.5)';
-            modal.style.display = 'flex';
-            modal.style.flexDirection = 'column';
-            modal.style.justifyContent = 'center';
-            modal.style.alignItems = 'center';
             modal.style.color = 'white';
             modal.style.fontSize = '20px';
             modal.style.zIndex = '1000';
+            modal.style.padding = '10px';
             modal.innerHTML = '<p style="text-align: center;">我们检测到你启用了广告拦截</p><p style="text-align: center;">暂时为此网站关掉它吧!</p>';
             modal.style.opacity = '0';
             modal.style.transition = 'opacity 0.8s';
@@ -54,15 +48,14 @@
                 modal.style.opacity = '1';
             }, 800);
 
-            modal.addEventListener('click', function() {
-                
+            setTimeout(function() {
                 modal.style.opacity = '0';
 
                 
                 setTimeout(function() {
                     document.body.removeChild(modal);
                 }, 800);  // 800毫秒后移除
-            });
+            }, 5000);  // 5秒后开始消失
         }, 0);  
     };
 </script>
