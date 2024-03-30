@@ -24,14 +24,13 @@
 
 
 <script>
-    //
+    //高端的检测往往采用最朴素的验证方式...
     var testImage = new Image();
     testImage.src = "https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4";
 
     testImage.onerror = function() {
         setTimeout(function() {
-            // 创建一个模态框
-            var modal = document.createElement('div');
+			var modal = document.createElement('div');
             modal.style.position = 'fixed';
             modal.style.top = '0';
             modal.style.right = '0';
@@ -39,17 +38,18 @@
             modal.style.left = '0';
             modal.style.background = 'rgba(0,0,0,0.5)';
             modal.style.display = 'flex';
+            modal.style.flexDirection = 'column';
             modal.style.justifyContent = 'center';
             modal.style.alignItems = 'center';
             modal.style.color = 'white';
             modal.style.fontSize = '20px';
             modal.style.zIndex = '1000';
-            modal.textContent = '我们检测到你启用了广告拦截，暂时为此网站关掉它吧!';
-            modal.style.opacity = '0';  // 初始透明度为0
-            modal.style.transition = 'opacity 0.8s';  // 设置淡入淡出的动画效果
+            modal.innerHTML = '<p style="text-align: center;">我们检测到你启用了广告拦截</p><p style="text-align: center;">暂时为此网站关掉它吧!</p>';
+            modal.style.opacity = '0';
+            modal.style.transition = 'opacity 0.8s';
             document.body.appendChild(modal);
 
-            // 淡入动画
+            
             setTimeout(function() {
                 modal.style.opacity = '1';
             }, 800);
@@ -61,7 +61,7 @@
                 
                 setTimeout(function() {
                     document.body.removeChild(modal);
-                }, 800);  // 500毫秒后移除
+                }, 800);  // 800毫秒后移除
             });
         }, 0);  
     };
@@ -126,8 +126,6 @@
 							<script>
 								var text = `
 									更新日期:3.29	
-									
-									插个东西：很好奇你们如何看待G1.4班的王bh先生🤔？
 									
 									角色扮演:
 
