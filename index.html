@@ -106,7 +106,7 @@
         <svg viewbox='0 0 50 50'>
             <circle r='25' cx='25' cy='25'></circle>
         </svg>
-        <p>它真的在努力加载了😭</p>
+        <p id="loading-text">它真的在努力加载了😭</p>
     </div>
     <iframe id="main" style="display: none;"></iframe>
     <script>
@@ -122,7 +122,6 @@
         const iframe = document.getElementById('main');
         iframe.src = '/main.html';  
         iframe.onload = function() {
-            // 预加载assets/webfonts/文件夹中的文件
             const assets = [
                 'assets/webfonts/fa-brands-400.eot',
                 'assets/webfonts/fa-brands-400.svg',
@@ -140,7 +139,6 @@
                 'assets/webfonts/fa-solid-900.woff',
                 'assets/webfonts/fa-solid-900.woff2'
             ];
-            // 预加载images/文件夹中的文件
             const images = [
                 'images/bg.jpg',
                 'images/logo.jpg',
@@ -149,13 +147,24 @@
                 'images/pic02.webp',
                 'images/pic03.webp'
             ];
-            const promises = [...assets, ...images].map(path => fetch(path));
-            Promise.all(promises).then(() => {
-                loading.out();
-                setTimeout(function() {
-                    window.location.href = '/main.html';  
-                }, 0);  
-            });
+            let loaded = 0;
+            const total = assets.length + images.length;
+            const loadingText = document.getElementById('loading-text');
+
+            const updateProgress = () => {
+                loaded++;
+                const progress = Math.floor((loaded / total) * 100);
+                loadingText.textContent = `已加载 ${progress}%`;
+                if (loaded === total) {
+                    loading.out();
+                    setTimeout(function() {
+                        window.location.href = '/main.html';  
+                    }, 0);  
+                }
+            };
+
+            const promises = [...assets, ...images].map(path => fetch(path).then(updateProgress));
+            Promise.all(promises);
         };
     </script>
 </body>
