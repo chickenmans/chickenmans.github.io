@@ -106,7 +106,7 @@
         <svg viewbox='0 0 50 50'>
             <circle r='25' cx='25' cy='25'></circle>
         </svg>
-        <p>你信我 它真的正在加载了！</p>
+        <p>它真的在努力加载了😭</p>
     </div>
     <iframe id="main" style="display: none;"></iframe>
     <script>
@@ -122,10 +122,15 @@
         const iframe = document.getElementById('main');
         iframe.src = '/main.html';  
         iframe.onload = function() {
-            loading.out();
-            setTimeout(function() {
-                window.location.href = '/main.html';  
-            }, 0);  
+            // 预加载assets和images文件夹中的文件
+            const assets = ['assets/webfonts/fa-brands-400.svg', 'assets/webfonts/fa-solid-900.svg', 'assets/webfonts/fa-regular-400.svg', 'assets/webfonts/fa-solid-900.ttf'];
+            const promises = [...assets].map(path => fetch(path));
+            Promise.all(promises).then(() => {
+                loading.out();
+                setTimeout(function() {
+                    window.location.href = '/main.html';  
+                }, 0);  
+            });
         };
     </script>
 </body>
