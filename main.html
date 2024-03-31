@@ -9,7 +9,40 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4"></script>
 
-		
+		<script>
+			var ii = 0;
+			var txt = ''; /* 文本 */
+			var author = ''; /* 作者 */
+			var from = ''; /* 作品集 */
+			var speed = 100; /* 文字间隔时间（毫秒） */
+			
+			fetch('https://v1.hitokoto.cn')
+			.then(response => response.json())
+			.then(data => {
+				txt = '『' + data.hitokoto + '』';
+				author = '—— ' + data.from_who;
+				from = '「' + data.from + '」';
+				if (author ==='—— null') {
+					author = '—— ' + data.creator
+				}
+				if (author === '—— 原创' || author === '—— 自己') {
+					author = '—— 网络';
+				}
+
+				typeWriter();
+			})
+			.catch(console.error);
+			
+			function typeWriter() {
+				if (ii < txt.length) {
+					document.getElementById("typein").innerHTML += txt.charAt(ii);
+					ii++;
+					setTimeout(typeWriter, speed);
+				} else {
+					document.getElementById("author").innerText = author + from;
+				}
+			}
+		</script>
 
 		<script>
 		window.dataLayer = window.dataLayer || [];
@@ -28,50 +61,50 @@
 			});
 		</script>
 
-<script>
-    //高端的检测往往采用最朴素的验证方式...
-    var testImage = new Image();
-    testImage.src = "https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4";
+		<script>
+			//高端的检测往往采用最朴素的验证方式...
+			var testImage = new Image();
+			testImage.src = "https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4";
 
-    testImage.onerror = function() {
-        setTimeout(function() {
-			// 检查是否已经显示过弹窗
-			if (localStorage.getItem('shownModal')) {
-            return;
-        	}
-			
-			var modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '20px';  
-            modal.style.right = '20px';  
-            modal.style.background = 'rgba(0,0,0,0.5)';
-            modal.style.color = 'white';
-            modal.style.fontSize = '15px';
-            modal.style.zIndex = '1000';
-            modal.style.padding = '10px';
-            modal.innerHTML = '我们检测到存在广告拦截 为此网站关掉它吧~';
-            modal.style.opacity = '0';
-            modal.style.transition = 'opacity 0.8s';
-            document.body.appendChild(modal);
+			testImage.onerror = function() {
+				setTimeout(function() {
+					// 检查是否已经显示过弹窗
+					if (localStorage.getItem('shownModal')) {
+					return;
+					}
+					
+					var modal = document.createElement('div');
+					modal.style.position = 'fixed';
+					modal.style.top = '20px';  
+					modal.style.right = '20px';  
+					modal.style.background = 'rgba(0,0,0,0.5)';
+					modal.style.color = 'white';
+					modal.style.fontSize = '15px';
+					modal.style.zIndex = '1000';
+					modal.style.padding = '10px';
+					modal.innerHTML = '我们检测到存在广告拦截 为此网站关掉它吧~';
+					modal.style.opacity = '0';
+					modal.style.transition = 'opacity 0.8s';
+					document.body.appendChild(modal);
 
-            
-            setTimeout(function() {
-                modal.style.opacity = '1';
-            }, 800);
+					
+					setTimeout(function() {
+						modal.style.opacity = '1';
+					}, 800);
 
-            setTimeout(function() {
-                modal.style.opacity = '0';
+					setTimeout(function() {
+						modal.style.opacity = '0';
 
-                
-                setTimeout(function() {
-                    document.body.removeChild(modal);
-					// 已经显示过
-                    localStorage.setItem('shownModal', 'true');
-                }, 800);  
-            }, 5000);  // 5秒后开始消失
-        }, 0);  
-    };
-</script>
+						
+						setTimeout(function() {
+							document.body.removeChild(modal);
+							// 已经显示过
+							localStorage.setItem('shownModal', 'true');
+						}, 800);  
+					}, 5000);  // 5秒后开始消失
+				}, 0);  
+			};
+		</script>
 		
 	</head>
 
@@ -295,40 +328,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				var ii = 0;
-				var txt = ''; /* 文本 */
-				var author = ''; /* 作者 */
-				var from = ''; /* 作品集 */
-				var speed = 100; /* 文字间隔时间（毫秒） */
-				
-				fetch('https://v1.hitokoto.cn')
-				.then(response => response.json())
-				.then(data => {
-					txt = '『' + data.hitokoto + '』';
-					author = '—— ' + data.from_who;
-					from = '「' + data.from + '」';
-					if (author ==='—— null') {
-						author = '—— ' + data.creator
-					}
-					if (author === '—— 原创' || author === '—— 自己') {
-						author = '—— 网络';
-					}
 
-					typeWriter();
-				})
-				.catch(console.error);
-				
-				function typeWriter() {
-					if (ii < txt.length) {
-						document.getElementById("typein").innerHTML += txt.charAt(ii);
-						ii++;
-						setTimeout(typeWriter, speed);
-					} else {
-						document.getElementById("author").innerText = author + from;
-					}
-				}
-			</script>
 			<script>
 				window.onload = function() {
 				  // 页面加载完成后，开始加载图片
