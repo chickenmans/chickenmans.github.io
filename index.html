@@ -1,381 +1,135 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-	<head>
-		<title>Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 2vmin;
+        }
 
-		
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-	
-		gtag('config', 'G-YSHE571DS4');
-		</script>
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7937914983769383"
-		crossorigin="anonymous">
-		</script>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #171717;
+        }
 
-<script>
-    //高端的检测往往采用最朴素的验证方式...
-    var testImage = new Image();
-    testImage.src = "https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4";
+        .title {
+            font-family: sans-serif;
+            font-size: 10rem;
+            color: #17f700;
+            font-weight: 900;
+            cursor: pointer;
+        }
 
-    testImage.onerror = function() {
-        setTimeout(function() {
-			// 检查是否已经显示过弹窗
-			if (localStorage.getItem('shownModal')) {
-            return;
-        	}
-			
-			var modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '20px';  
-            modal.style.right = '20px';  
-            modal.style.background = 'rgba(0,0,0,0.5)';
-            modal.style.color = 'white';
-            modal.style.fontSize = '15px';
-            modal.style.zIndex = '1000';
-            modal.style.padding = '10px';
-            modal.innerHTML = '我们检测到存在广告拦截 为此网站关掉它吧~';
-            modal.style.opacity = '0';
-            modal.style.transition = 'opacity 0.8s';
-            document.body.appendChild(modal);
+        .title span {
+            font-size: 10rem;
+            color: #f7f7f7;
+        }
 
-            
-            setTimeout(function() {
-                modal.style.opacity = '1';
-            }, 800);
+        .loading {
+            position: fixed;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #f7f7f7;
+            z-index: 100000000;
+            transition: 1s ease;
+        }
 
-            setTimeout(function() {
-                modal.style.opacity = '0';
+        .loading svg {
+            width: 5rem;
+            margin-bottom: 2rem;
+            overflow: visible;
+            transition: 0.3s ease;
+        }
 
-                
-                setTimeout(function() {
-                    document.body.removeChild(modal);
-					// 已经显示过
-                    localStorage.setItem('shownModal', 'true');
-                }, 800);  
-            }, 5000);  // 5秒后开始消失
-        }, 0);  
-    };
-</script>
-		
-	</head>
+        .loading svg circle {
+            fill: none;
+            stroke: #171717;
+            stroke-width: 12;
+            stroke-dasharray: 160;
+            stroke-dashoffset: 160;
+            transform-origin: center;
+            animation: circle_rotate 3s ease-in infinite;
+        }
 
+        @keyframes circle_rotate {
+            0% {
+                transform: rotate(0deg);
+                stroke-dashoffset: 160;
+            }
 
-	<body class="is-preload">
+            100% {
+                transform: rotate(360deg);
+                stroke-dashoffset: -160;
+            }
+        }
 
-			<div id="wrapper">
+        .loading p {
+            font-family: sans-serif;
+            font-size: 2rem;
+            color: #171717;
+            font-weight: 900;
+            transition: 0.3s ease;
+        }
 
-				
-					<header id="header">
-						<div class="logo" style="position: relative;">
-							<img src="images/logo.jpg" style="width: 5.8rem; height: 5.8rem; border-radius: 50%; object-fit: cover; position: absolute; top: -5px; left: -5px;">
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>yc</h1>
-									<p id="typein"></p>
-									<p id="author"></p>
+        .loading_out {
+            transform: translateY(100%);
+        }
 
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#all">所有内容</a></li>
-								<li><a href="#etsanswer">本期E听说答案</a></li>
-								<li><a href="#about">关于我</a></li>
-								<li><a href="#contact">联系作者~</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+        .loading_out svg,
+        .loading_out p {
+            opacity: 0;
+        }
 
-				
-					<div id="main">
+    </style>
+</head>
 
-						
-						<article id="ets">
-							<h2 class="major">E听说答案工具</h2>
-							<span class="image main"><img src="images/pic01.webp" id="pic01" alt="" /></span>
-							<p><b>重要通知：Android 14对于data目录的授权进一步收紧 在Android 14的后期版本和Android 15预览版中 当前传入授权已失效 Shizuku授权方案不如直接用电脑 所以想继续正常使用请保持版本低于Android 14</b></p>
-							<p>下载题目后即可获取答案 不用再为同学不给答案而担心了 你也可以用它获取到比E听说本身提供的更多的答案 遥遥领先🤗</p>
-							<p>Andoid系统下载APK文件安装 Windows下载Zip文件解压运行 欢迎改进Andoid版本 <b>由于个人原因 此项目不再更新 如果有什么问题的话 欢迎联系我~</b></p>
-							下载:
-							<br>
-							<a href="https://d.kstore.space/download/8128/main.zip">FK-ETS-Windows-x64</a>
-							<p><a href="https://d.kstore.space/download/8128/at-ets.apk">FK-ETS-Android-arm64</a></p>
-							<a href="https://github.com/ycccccccy/AT-ETS_PC">Windows端开放源代码</a>
-							<p><a href="https://github.com/ycccccccy/AT-ETS_Android">Android端开放源代码</a> </p>
-							<p>2024.3.30</p>
+<body>
+    <div class="loading">
+        <svg viewbox='0 0 50 50'>
+            <circle r='25' cx='25' cy='25'></circle>
+        </svg>
+        <p>正在加载中...等等吧~</p>
+    </div>
+    <script>
+        const loading = {
+            container: document.querySelector(".loading"),
+            in(target) {
+                this.container.classList.remove("loading_out");
+                window.location.href = target;
+            },
+            out() {
+                this.container.classList.add("loading_out");
+            }
+        };
+        window.addEventListener('load', function() {
+            fetch('/main.html')  
+                .then(response => response.text())
+                .then(data => {
+                    
+                    sessionStorage.setItem('mainPage', data);
+                    
+                    loading.in('/main.html'); 
+                });
+        });
+    </script>
+</body>
 
-						</article>
-
-						<article id="etsanswer">
-							<h2 class="major">本期E听说答案</h2>
-							<!-- 答案显示 -->
-
-							<p></p>
-							<div id="answerText" style="display: none;"></div>
-							<p></p>
-													
-							<script>
-								var text = `
-									更新日期:3.29	
-									
-									角色扮演:
-
-									问题 1:
-
-									1. Does T’ai chi have a long history? 
-
-									问题 2:
-
-									1. The name of T’ai chi carries a special meaning, doesn’t it? 
-
-									问题 3:
-
-									1. In which countries do people like playing T’ai chi at present? 
-
-									问题 4:
-
-									1. No, it isn’t.
-
-									问题 5:
-
-									1. It can be used to cure illness and for self-protection.
-
-									问题 6:
-
-									1. Taoism. 
-
-									问题 7:
-
-									1. A world of Yin and Yang.
-
-									问题 8:
-
-									1. More and more people around the world.
-
-									故事复述:
-
-									1. On July 22, 2012, Liu Lan went to London. She is a girl from Harbin and she was one of many Chinese volunteers working for the past 2012 Olympic Games in London. As a volunteer for the Olympic Games, she felt very proud because working as a volunteer influenced her deeply. Actually, when she was a junior student at Beijing Foreign Studies University, she once worked as a guide for the foreign athletes in 2008 Beijing Olympic Games. After she graduated from the Newcastle University in England, she is now working as an interpreter at the London Court. 
-									`;
-								var i = 0;
-								var answerText = document.getElementById('answerText');
-								var a = document.querySelector('a[href="#etsanswer"]');
-								var clicked = false;
-
-								// 监听
-								a.addEventListener('click', function(event) {
-									if (!clicked) {
-										
-										answerText.style.display = 'block';
-										var timer = setInterval(function() {
-											if (i < text.length) {
-												if (text.charAt(i) === '\n') {
-													answerText.innerHTML += '<br>';
-												} else {
-													answerText.innerHTML += text.charAt(i);
-												}
-												i++;
-											} else {
-												clearInterval(timer);
-												
-												clicked = true;
-											}
-										}, 10); // 每()毫秒更新
-									} else {
-										answerText.style.display = 'block';
-									}
-								});
-								
-							</script>
-						</article>
-
-						<!-- Work -->
-						<article id="net">
-							<h2 class="major">自动认证学校网络</h2>
-							<span class="image main"><img src="images/pic02.webp" id="pic02" alt="" /></span>
-							<p>大家都知道啊 我们连接学校网络的时候往往会弹出一个窗口提示你去认证 但很显然 我们都没有这个认证的账号和密码 不过 怎么可能用不了呢😆</p>
-							<p>以下是我无聊时做的一个小工具 用于自动认证 Android设备使用时任何弹出的授权请求务必授权 否则会导致出错!</p>
-							<p>3.27更新内容：删除了经常抽风的自动联网 修改了判定逻辑 新增登出认证以及显示在线时间 自动保持在线的功能</p>
-							下载:
-							<br>
-							<a href="https://d.kstore.space/download/8128/GZnet-Windows-x64.zip">GZnet-Windows-x64</a>
-							<p><a href="https://d.kstore.space/download/8128/鸽子家的网络.apk">GZnet-Android-arm64</a></p>
-							<p>2024.3.27</p>
-							
-						</article>
-
-
-						<script>
-							document.getElementById('executeButton').addEventListener('click', function() {
-							var articles = document.getElementsByTagName('article');
-							var titles = [];
-							for (var i = 0; i < articles.length; i++) {
-								// 检查<article>元素的id属性
-								var id = articles[i].id;
-								// 如果id属性是"about"，"contact"或"ets"，则跳过这个<article>元素
-								if (id === 'about' || id === 'contact' || id === 'ets') {
-									continue;
-								}
-								var title = articles[i].getElementsByTagName('h2')[0].innerText;
-								titles.push(title);
-							}
-							var div = document.createElement('div');
-							for (var i = 0; i < titles.length; i++) {
-								var a = document.createElement('a');
-								a.innerText = titles[i];
-								a.href = '#' + articles[i].id;
-								div.appendChild(a);
-								div.appendChild(document.createElement('br'));
-							}
-							document.body.appendChild(div);
-							});
-						</script>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">关于我</h2>
-								<span class="image main"><img src="images/pic03.webp" id="pic03" alt="" /></span>
-								<p>好吧，其实这里没什么好看的~</p>
-								<p>不定期更新点无聊的内容和E听说答案🥰</p>
-								<p>2024.3.17</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">联系我</h2>
-								<div class="inner">
-									<p>发送至<b>邮箱</b>：yc@zh206yc.onmicrosoft.com</p>
-									<p>或者...<b>微信</b>~：x2463274</p>
-								</div>
-								<ul class="icons">
-									<li><a href="https://twitter.com/yc2166" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://github.com/ycccccccy" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-							<article id="all">
-								<h2 class="major">往期所有内容</h2>
-								<div class="inner">
-								</div>
-							</article>
-
-
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">嘿嘿嘿 欢迎分享给你的朋友们 随机文案来源于一言</p>
-					</footer>
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				var ii = 0;
-				var txt = ''; /* 文本 */
-				var author = ''; /* 作者 */
-				var from = ''; /* 作品集 */
-				var speed = 100; /* 文字间隔时间（毫秒） */
-				
-				fetch('https://v1.hitokoto.cn')
-				.then(response => response.json())
-				.then(data => {
-					txt = '『' + data.hitokoto + '』';
-					author = '—— ' + data.from_who;
-					from = '「' + data.from + '」';
-					if (author ==='—— null') {
-						author = '—— ' + data.creator
-					}
-					if (author === '—— 原创' || author === '—— 自己') {
-						author = '—— 网络';
-					}
-
-					typeWriter();
-				})
-				.catch(console.error);
-				
-				function typeWriter() {
-					if (ii < txt.length) {
-						document.getElementById("typein").innerHTML += txt.charAt(ii);
-						ii++;
-						setTimeout(typeWriter, speed);
-					} else {
-						document.getElementById("author").innerText = author + from;
-					}
-				}
-			</script>
-			<script>
-				window.onload = function() {
-				  // 页面加载完成后，开始加载图片
-				  var img3 = new Image();
-				  img3.src = 'images/pic03.webp';  // 图片的真实路径
-				  img3.onload = function() {
-					// 图片加载完成后，将其添加到页面中
-					document.getElementById('pic03').appendChild(img3);
-
-				  };
-
-				  var img1 = new Image();
-				  img1.src = 'images/pic01.webp';
-				  img1.onload = function() {
-					document.getElementById('pic01').appendChild(img1);
-
-				  };
-
-				  var img2 = new Image();
-				  img2.src = 'images/pic02.webp';
-				  img2.onload = function() {
-					document.getElementById('pic02').appendChild(img2);
-
-				  };
-				};
-			</script>
-			<script>
-				var a = document.querySelector('a[href="#all"]');
-				// 添加click事件监听器
-				a.addEventListener('click', function(event) {
-					var articles = document.getElementsByTagName('article');
-					var innerDiv = document.querySelector('#all .inner');
-					innerDiv.innerHTML = '';
-    				var index = 1;
-					for (var i = 0; i < articles.length; i++) {
-						var id = articles[i].id;
-						if (id === 'about' || id === 'contact' || id === 'etsanswer'| id === 'all') {
-							continue;
-						}
-						var title = articles[i].getElementsByTagName('h2')[0].innerText;
-						var titleLink = document.createElement('a');
-						titleLink.innerText = index + '. ' + title;
-						titleLink.href = '#' + id;
-						innerDiv.appendChild(titleLink);
-						// 连换两行，我觉得这样好看~
-						innerDiv.appendChild(document.createElement('br'));
-						innerDiv.appendChild(document.createElement('br'));
-						index++;
-					}
-				});
-
-
-
-			</script>
-	</body>
 </html>
