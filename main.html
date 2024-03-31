@@ -229,7 +229,7 @@
 							for (var i = 0; i < articles.length; i++) {
 								// 检查<article>元素的id属性
 								var id = articles[i].id;
-								// 如果id属性是"about"，"contact"或"ets"，则跳过这个<article>元素
+								// 跳过主页的文章
 								if (id === 'about' || id === 'contact' || id === 'ets') {
 									continue;
 								}
@@ -333,9 +333,9 @@
 				window.onload = function() {
 				  // 页面加载完成后，开始加载图片
 				  var img3 = new Image();
-				  img3.src = 'images/pic03.webp';  // 图片的真实路径
+				  img3.src = 'images/pic03.webp';  
 				  img3.onload = function() {
-					// 图片加载完成后，将其添加到页面中
+					
 					document.getElementById('pic03').appendChild(img3);
 
 				  };
@@ -357,7 +357,7 @@
 			</script>
 			<script>
 				var a = document.querySelector('a[href="#all"]');
-				// 添加click事件监听器
+				
 				a.addEventListener('click', function(event) {
 					var articles = document.getElementsByTagName('article');
 					var innerDiv = document.querySelector('#all .inner');

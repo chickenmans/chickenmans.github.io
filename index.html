@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 1</title>
+    <title>Loading</title>
     <style>
         * {
             padding: 0;
@@ -106,29 +106,27 @@
         <svg viewbox='0 0 50 50'>
             <circle r='25' cx='25' cy='25'></circle>
         </svg>
-        <p>正在加载中...等等吧~</p>
+        <p>LOADING</p>
     </div>
+    <iframe id="main" style="display: none;"></iframe>
     <script>
         const loading = {
             container: document.querySelector(".loading"),
-            in(target) {
+            in() {
                 this.container.classList.remove("loading_out");
-                window.location.href = target;
             },
             out() {
                 this.container.classList.add("loading_out");
             }
         };
-        window.addEventListener('load', function() {
-            fetch('/main.html')  
-                .then(response => response.text())
-                .then(data => {
-                    
-                    sessionStorage.setItem('mainPage', data);
-                    
-                    loading.in('/main.html'); 
-                });
-        });
+        const iframe = document.getElementById('main');
+        iframe.src = '/main.html';  
+        iframe.onload = function() {
+            loading.out();
+            setTimeout(function() {
+                window.location.href = '/main.html';  
+            }, 0);  
+        };
     </script>
 </body>
 
