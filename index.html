@@ -122,9 +122,34 @@
         const iframe = document.getElementById('main');
         iframe.src = '/main.html';  
         iframe.onload = function() {
-            // 预加载assets和images文件夹中的文件
-            const assets = ['assets/webfonts/fa-brands-400.svg', 'assets/webfonts/fa-solid-900.svg', 'assets/webfonts/fa-regular-400.svg', 'assets/webfonts/fa-solid-900.ttf'];
-            const promises = [...assets].map(path => fetch(path));
+            // 预加载assets/webfonts/文件夹中的文件
+            const assets = [
+                'assets/webfonts/fa-brands-400.eot',
+                'assets/webfonts/fa-brands-400.svg',
+                'assets/webfonts/fa-brands-400.ttf',
+                'assets/webfonts/fa-brands-400.woff',
+                'assets/webfonts/fa-brands-400.woff2',
+                'assets/webfonts/fa-regular-400.eot',
+                'assets/webfonts/fa-regular-400.svg',
+                'assets/webfonts/fa-regular-400.ttf',
+                'assets/webfonts/fa-regular-400.woff',
+                'assets/webfonts/fa-regular-400.woff2',
+                'assets/webfonts/fa-solid-900.eot',
+                'assets/webfonts/fa-solid-900.svg',
+                'assets/webfonts/fa-solid-900.ttf',
+                'assets/webfonts/fa-solid-900.woff',
+                'assets/webfonts/fa-solid-900.woff2'
+            ];
+            // 预加载images/文件夹中的文件
+            const images = [
+                'images/bg.jpg',
+                'images/logo.jpg',
+                'images/overlay.png',
+                'images/pic01.webp',
+                'images/pic02.webp',
+                'images/pic03.webp'
+            ];
+            const promises = [...assets, ...images].map(path => fetch(path));
             Promise.all(promises).then(() => {
                 loading.out();
                 setTimeout(function() {
