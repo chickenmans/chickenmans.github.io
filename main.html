@@ -9,40 +9,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YSHE571DS4"></script>
 
-		<script>
-			var ii = 0;
-			var txt = ''; /* 文本 */
-			var author = ''; /* 作者 */
-			var from = ''; /* 作品集 */
-			var speed = 100; /* 文字间隔时间（毫秒） */
-			
-			fetch('https://v1.hitokoto.cn')
-			.then(response => response.json())
-			.then(data => {
-				txt = '『' + data.hitokoto + '』';
-				author = '—— ' + data.from_who;
-				from = '「' + data.from + '」';
-				if (author ==='—— null') {
-					author = '—— ' + data.creator
-				}
-				if (author === '—— 原创' || author === '—— 自己') {
-					author = '—— 网络';
-				}
-
-				typeWriter();
-			})
-			.catch(console.error);
-			
-			function typeWriter() {
-				if (ii < txt.length) {
-					document.getElementById("typein").innerHTML += txt.charAt(ii);
-					ii++;
-					setTimeout(typeWriter, speed);
-				} else {
-					document.getElementById("author").innerText = author + from;
-				}
-			}
-		</script>
+		
 
 		<script>
 		window.dataLayer = window.dataLayer || [];
@@ -328,7 +295,40 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var ii = 0;
+				var txt = ''; /* 文本 */
+				var author = ''; /* 作者 */
+				var from = ''; /* 作品集 */
+				var speed = 100; /* 文字间隔时间（毫秒） */
+				
+				fetch('https://v1.hitokoto.cn')
+				.then(response => response.json())
+				.then(data => {
+					txt = '『' + data.hitokoto + '』';
+					author = '—— ' + data.from_who;
+					from = '「' + data.from + '」';
+					if (author ==='—— null') {
+						author = '—— ' + data.creator
+					}
+					if (author === '—— 原创' || author === '—— 自己') {
+						author = '—— 网络';
+					}
 
+					typeWriter();
+				})
+				.catch(console.error);
+				
+				function typeWriter() {
+					if (ii < txt.length) {
+						document.getElementById("typein").innerHTML += txt.charAt(ii);
+						ii++;
+						setTimeout(typeWriter, speed);
+					} else {
+						document.getElementById("author").innerText = author + from;
+					}
+				}
+			</script>
 			<script>
 				window.onload = function() {
 				  // 页面加载完成后，开始加载图片
