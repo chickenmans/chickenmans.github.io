@@ -139,16 +139,8 @@
                 'assets/webfonts/fa-solid-900.woff',
                 'assets/webfonts/fa-solid-900.woff2'
             ];
-            const images = [
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/bg.jpg',
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/logo.jpg',
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/overlay.png',
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/pic01.webp',
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/pic02.webp',
-                'https://cdn.jsdelivr.net/gh/ycccccccy/ycccccccy.github.io@main/images/pic03.webp'
-            ];
             let loaded = 0;
-            const total = assets.length + images.length;
+            const total = assets.length;
             const loadingText = document.getElementById('loading-text');
 
             const updateProgress = () => {
@@ -159,11 +151,11 @@
                     loading.out();
                     setTimeout(function() {
                         window.location.href = '/main.html';  
-                    }, 0);  
+                    }, 500);  
                 }
             };
 
-            const promises = [...assets, ...images].map(path => fetch(path).then(updateProgress));
+            const promises = [...assets].map(path => fetch(path).then(updateProgress));
             Promise.all(promises);
         };
     </script>
