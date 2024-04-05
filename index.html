@@ -106,7 +106,7 @@
         <svg viewbox='0 0 50 50'>
             <circle r='25' cx='25' cy='25'></circle>
         </svg>
-        <p id="loading-text">它真的在努力加载了🤔</p>
+        <p id="loading-text">等等 再等等 它会加载好的...</p>
     </div>
     <iframe id="main" style="display: none;"></iframe>
     <script>
@@ -146,7 +146,7 @@
             const updateProgress = () => {
                 loaded++;
                 const progress = Math.floor((loaded / total) * 100);
-                loadingText.textContent = `已加载 ${progress}%`;
+                loadingText.textContent = `必要数据下载已完成 ${progress}%`;
                 if (loaded === total) {
                     loading.out();
                     setTimeout(function() {
