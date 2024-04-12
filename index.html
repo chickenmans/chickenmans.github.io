@@ -15,6 +15,19 @@
             font-size: 2vmin;
         }
 
+        #loading-text {
+            
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        #loading-text.slide-in {
+        
+        opacity: 1;
+        transform: translateX(0);
+        }
+
         div {
             display: flex;
             justify-content: center;
@@ -121,6 +134,31 @@
         </svg>
         <p id="loading-text">正在和服务器搞好关系，马上就好！</p>
     </div>
+    <script>
+        const loadingTexts = [
+        "正在和服务器玩捉迷藏，请稍等我们找到它！",
+        "正在抓捕一些顽皮的像素~",
+        "我们正在组装页面的每一个像素，马上就好咯！"
+        ];
+
+        let currentIndex = 0;
+
+        function cycleLoadingText() {
+        const loadingTextElement = document.getElementById('loading-text');
+        loadingTextElement.classList.remove('slide-in');
+        setTimeout(() => {
+            loadingTextElement.textContent = loadingTexts[currentIndex];
+            loadingTextElement.classList.add('slide-in');
+            currentIndex = (currentIndex + 1) % loadingTexts.length;
+        }, 500); // 500ms for the slide-out animation to complete
+        }
+
+        // Initial call to start the cycle
+        cycleLoadingText();
+
+        // Set the interval for changing texts
+        setInterval(cycleLoadingText, 5500); // 5000ms display time + 500ms for animation
+    </script>
     <iframe id="main" style="display: none;"></iframe>
     <script>
         const loading = {
