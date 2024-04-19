@@ -25,6 +25,24 @@ GitHub：https://github.com/imsyy/home
     src: url('../font/UnidreamLED.ttf') format('truetype');
 }
 
+@media (max-width: 900px) {
+
+    .accordion-header {
+        font-size: 16px;  /* 调整标题的字体大小 */
+    }
+    #article {
+        width: 100%;
+        font-size: 14px;  
+    }
+    .link-card {
+        width: 90%;  
+        margin: 0 auto;  
+    }
+    .accordion-header {
+        font-size: 16px;  
+    }
+}
+
 /*全局样式*/
 html,
 body {
