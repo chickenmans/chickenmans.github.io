@@ -70,7 +70,7 @@
     #article {
         width: 100%;
         font-size: 14px;  
-        max-height: 280px;  /* 设置最大高度 */
+        max-height: 300px;  /* 设置最大高度 */
     }
     .link-card {
         width: 90%;  
@@ -82,7 +82,7 @@
 
     #articleAccordion {
         min-width: 150px;
-        width: 50%;  /* 调整accordion的宽度 */
+        width: 60%;  /* 调整accordion的宽度 */
     }
 
     .img-title-big {
@@ -98,7 +98,7 @@
     }
 
     .box-left {
-        width: 50%; /* 增大文本区域宽度 */
+        width: 60%; /* 增大文本区域宽度 */
     }
 
     .col.left {
