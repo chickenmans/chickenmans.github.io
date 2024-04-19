@@ -52,11 +52,6 @@
         font-size: 14px;  /* 调整标题的字体大小 */
     }
 
-    .box-left {
-        flex: 0 100%; /* 增大左侧盒子的宽度 */
-        min-width: 100%; /* 增大左侧盒子的最小宽度 */
-    }
-
     #article {
         width: 100%;
         font-size: 14px;  
@@ -76,9 +71,6 @@
         width: 70%;  /* 调整accordion的宽度 */
     }
 
-    #accordion {
-        min-width: 120%; /* 调整accordion的最小宽度 */
-    }
 
     .img-title-big {
         font-size: 40px; /* 减小标题字体大小 */
