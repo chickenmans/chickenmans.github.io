@@ -70,7 +70,11 @@
     #article {
         width: 100%;
         font-size: 14px;  
-        max-height: 200px;  /* 设置最大高度 */
+        max-height: 250px;  /* 设置最大高度 */
+    }
+
+    .img-text {
+        font-size: 12px; /* 减小小标题和日期字体大小 */
     }
     .link-card {
         width: 90%;  
@@ -81,15 +85,15 @@
     }
 
     .articleAccordion {
-        width: 90%;  /* 调整accordion的宽度 */
+        width: 100%;  /* 调整accordion的宽度 */
     }
 
     .img-title-big {
-        font-size: 16px; /* 减小标题字体大小 */
+        font-size: 20px; /* 减小标题字体大小 */
     }
 
     .box-left {
-        width: 100%; /* 增大文本区域宽度 */
+        width: 60%; /* 增大文本区域宽度 */
     }
 
     .col.left {
