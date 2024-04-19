@@ -155,6 +155,21 @@
 /*小于720px时*/
 @media (max-width: 720px) {
 
+    .accordion-header {
+        font-size: 16px;  /* 调整标题的字体大小 */
+    }
+    #article {
+        width: 100%;
+        font-size: 14px;  
+    }
+    .link-card {
+        width: 90%;  
+        margin: 0 auto;  
+    }
+    .accordion-header {
+        font-size: 16px;  
+    }
+
     /*左侧栏高度*/
     .main-left {
         transform: translateY(20px);
