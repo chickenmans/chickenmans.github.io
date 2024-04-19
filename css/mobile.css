@@ -64,6 +64,26 @@
         max-width: 900px !important;
     }
 
+    .accordion-header {
+        font-size: 14px;  /* 调整标题的字体大小 */
+    }
+    #article {
+        width: 100%;
+        font-size: 14px;  
+        max-height: 200px;  /* 设置最大高度 */
+    }
+    .link-card {
+        width: 90%;  
+        margin: 0 auto;  
+    }
+    .accordion-header {
+        font-size: 14px;  
+    }
+
+    .articleAccordion {
+        width: 90%;  /* 调整accordion的宽度 */
+    }
+
     .col.left {
         margin-right: 0.75rem;
     }
