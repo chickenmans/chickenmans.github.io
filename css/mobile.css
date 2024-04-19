@@ -85,7 +85,8 @@
     }
 
     .box-left {
-        width: 60%; /* 增大文本区域宽度 */
+        width: 100%; 
+        margin-left: 2%;
     }
 
     .col.left {
