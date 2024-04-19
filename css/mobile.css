@@ -58,6 +58,13 @@
         max-height: 350px;  /* 设置最大高度 */
     }
 
+    .box-wrapper {
+
+        width: 90%;
+        height: 90%;
+        padding: 10px;
+    }
+
     .link-card {
         width: 90%;  
         margin: 0 auto;  
