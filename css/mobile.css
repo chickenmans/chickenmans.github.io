@@ -70,11 +70,7 @@
     #article {
         width: 100%;
         font-size: 14px;  
-        max-height: 250px;  /* 设置最大高度 */
-    }
-
-    .img-text {
-        font-size: 12px; /* 减小小标题和日期字体大小 */
+        max-height: 280px;  /* 设置最大高度 */
     }
     .link-card {
         width: 90%;  
@@ -89,7 +85,11 @@
     }
 
     .img-title-big {
-        font-size: 20px; /* 减小标题字体大小 */
+        font-size: 30px; /* 减小标题字体大小 */
+    }
+
+    #logo-title-article-small, .img-text {
+        font-size: 10px; /* 减小“答案”和“2024.4.19”字体大小 */
     }
 
     .box-left {
