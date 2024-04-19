@@ -55,13 +55,13 @@
     #article {
         width: 100%;
         font-size: 14px;  
-        max-height: 350px;  /* 设置最大高度 */
+        max-height: 400px;  /* 设置最大高度 */
     }
 
     .box-wrapper {
 
         width: 90%;
-        height: 85%;
+        height: 80%;
         padding: 10px;
     }
 
@@ -75,7 +75,7 @@
 
     #articleAccordion {
         min-width: 150px;
-        width: 70%;  /* 调整accordion的宽度 */
+        width: 75%;  /* 调整accordion的宽度 */
     }
 
 
