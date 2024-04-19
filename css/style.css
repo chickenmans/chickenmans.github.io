@@ -28,18 +28,23 @@ GitHub：https://github.com/imsyy/home
 @media (max-width: 900px) {
 
     .accordion-header {
-        font-size: 16px;  /* 调整标题的字体大小 */
+        font-size: 14px;  /* 调整标题的字体大小 */
     }
     #article {
         width: 100%;
         font-size: 14px;  
+        max-height: 200px;  /* 设置最大高度 */
     }
     .link-card {
         width: 90%;  
         margin: 0 auto;  
     }
     .accordion-header {
-        font-size: 16px;  
+        font-size: 14px;  
+    }
+
+    .articleAccordion {
+        width: 90%;  /* 调整accordion的宽度 */
     }
 }
 
