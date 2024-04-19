@@ -77,9 +77,7 @@
     }
 
     #accordion {
-        min-width: 100%; /* 调整accordion的最小宽度 */
-        margin-right: 5px; /* 减小accordion的右边距 */
-        margin-left: 5px; /* 减小accordion的左边距 */
+        min-width: 120%; /* 调整accordion的最小宽度 */
     }
 
     .img-title-big {
