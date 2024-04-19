@@ -36,22 +36,6 @@
     }
 }
 
-@media screen and (max-width: 600px) {
-    .accordion-header {
-        font-size: 16px;  /* 调整标题的字体大小 */
-    }
-    #article {
-        width: 100%;
-        font-size: 14px;  
-    }
-    .link-card {
-        width: 90%;  
-        margin: 0 auto;  
-    }
-    .accordion-header {
-        font-size: 16px;  
-    }
-}
 
 /*小于992px时*/
 @media (max-width: 992px) {
@@ -67,11 +51,18 @@
     .accordion-header {
         font-size: 14px;  /* 调整标题的字体大小 */
     }
+
+    .box-left {
+        flex: 0 100%; /* 增大左侧盒子的宽度 */
+        min-width: 100%; /* 增大左侧盒子的最小宽度 */
+    }
+
     #article {
         width: 100%;
         font-size: 14px;  
         max-height: 300px;  /* 设置最大高度 */
     }
+
     .link-card {
         width: 90%;  
         margin: 0 auto;  
@@ -82,7 +73,13 @@
 
     #articleAccordion {
         min-width: 150px;
-        width: 60%;  /* 调整accordion的宽度 */
+        width: 70%;  /* 调整accordion的宽度 */
+    }
+
+    #accordion {
+        min-width: 100%; /* 调整accordion的最小宽度 */
+        margin-right: 10px; /* 减小accordion的右边距 */
+        margin-left: 10px; /* 减小accordion的左边距 */
     }
 
     .img-title-big {
