@@ -10,6 +10,7 @@ GitHub：https://github.com/imsyy/home
 window.onload = function() {
     document.getElementById('radio2').checked = true;
 }
+
 /* 尚未完善 */
 $(function () {
     let url = "../setting.json"

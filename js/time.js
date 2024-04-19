@@ -62,7 +62,7 @@ if (hour < 6) {
 } else if (hour < 19) {
     var hello = "傍晚好";
 } else if (hour < 22) {
-    var hello = "晚上好";
+    var hello = "晚上好啊";
 } else {
-    var hello = "夜深了";
+    var hello = "夜深了~";
 }
