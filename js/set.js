@@ -7,9 +7,6 @@ GitHub：https://github.com/imsyy/home
 
 /* 自定义配置 */
 
-window.onload = function() {
-    document.getElementById('radio2').checked = true;
-}
 
 /* 尚未完善 */
 $(function () {
@@ -98,7 +95,7 @@ function setBgImgInit() {
 
     switch (bg_img["type"]) {
         case "1":
-            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 7)}.webp`) //随机默认壁纸
+            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 6)}.webp`) //随机默认壁纸
             break;
         case "2":
             $('#bg').attr('src', bg_img_preinstall[2]); //必应每日
