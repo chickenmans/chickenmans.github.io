@@ -88,6 +88,10 @@
         font-size: 30px; /* 减小标题字体大小 */
     }
 
+    #logo-title-article.img-title-big{
+        font-size: 18px; 
+    }
+
     #logo-title-article-small, .img-text {
         font-size: 10px; /* 减小“答案”和“2024.4.19”字体大小 */
     }
