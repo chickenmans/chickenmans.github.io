@@ -37,6 +37,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .accordion-header {
+        font-size: 16px;  /* 调整标题的字体大小 */
+    }
     #article {
         width: 100%;
         font-size: 14px;  
