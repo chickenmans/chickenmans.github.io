@@ -1,10 +1,10 @@
 {
-    "title": "Ycccccccyの主页",
+    "title": "Ycccyの主页",
     "description": "一个默默无闻的主页",
-    "keywords": "Ycccccccy,个人主页",
-    "author": "Ycccccccy",
+    "keywords": "Ycccy,个人主页",
+    "author": "Ycccy",
     "logo_img": "./img/icon/avatar.jpg",
-    "logo_text_1": "Ycccccccy",
+    "logo_text_1": "Ycccy",
     "logo_text_2": "top",
     "github": "Ycccccccy",
     "qq": "1635310573",
@@ -22,5 +22,5 @@
         "统计"
     ],
 
-    "Copyright_text": "Ycccccccy"
+    "Copyright_text": "Ycccy"
 }
