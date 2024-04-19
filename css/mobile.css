@@ -84,6 +84,14 @@
         width: 90%;  /* 调整accordion的宽度 */
     }
 
+    .img-title-big {
+        font-size: 16px; /* 减小标题字体大小 */
+    }
+
+    .box-left {
+        width: 100%; /* 增大文本区域宽度 */
+    }
+
     .col.left {
         margin-right: 0.75rem;
     }
